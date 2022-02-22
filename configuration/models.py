@@ -107,7 +107,7 @@ class ConfigValue(models.Model):
         unique_together = ("environment", "key")
 
     def __str__(self):
-        return f"ConfigValue({self.key}, {self.value})"
+        return f"environment={self.environment.name} key={self.key} value={self.value} propagates={self.environment.propagate}"
 
     @property
     def value(self):
